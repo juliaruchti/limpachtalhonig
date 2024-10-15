@@ -1,9 +1,279 @@
 * {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "aptly", sans-serif;
+  font-weight: 400;
+}
+body {
+  background-color: var(--white);
 }
 
-header,
+h1 {
+  font-weight: bold;
+}
+
+p,
+a {
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 30pt;
+  font-weight: bold;
+  padding: 50px 0 30px 0;
+}
+
+.Warenkorb_Icon {
+  width: 1.5vw;
+}
+
+/* Warenkorb hover */
+
+.image-hover {
+  width: 1.5vw;
+  height: 1.5vw;
+  margin-left: 1.5vw;
+  background-image: url("/uploads/normal.png"); /* Initial background image */
+  background-size: cover; /* Cover the entire area of the element */
+  transition: background-image 0.2s ease-in-out; /* Smooth transition */
+}
+
+.image-hover:hover,
+.Warenkorb {
+  width: 1.5vw;
+  height: 1.5vw;
+  margin-left: 1.5vw;
+  background-image: url("/uploads/filled.png"); /* Change on hover */
+}
+
+/* --- */
+
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+.link {
+  text-decoration: underline;
+  color: #006742;
+}
+
+:root {
+  --yellow: #f3d627;
+  --white: #fff;
+  --black: #000;
+  --green: #006742;
+  --grey: #d5d5d5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+a:hover {
+  color: var(--green);
+}
+
+body {
+  min-height: 1000px;
+  hyphens: auto;
+}
+.logo img {
+  width: 3vw;
+  padding: 0.5vw;
+  box-sizing: content-box;
+}
+div.nav {
+  display: flex;
+  margin-right: -700px;
+}
+
+.intro {
+  display: flex;
+  margin-top: 12vw;
+  flex-direction: column;
+  align-items: center;
+  width: 33%;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 100px;
+  z-index: 3;
+  transition: 0.5s ease-in-out;
+}
+header.sticky {
+  padding: 5px 50px 4px;
+  background: #fff;
+}
+
+header ul {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header ul li {
+  position: relative;
+  list-style: none;
+}
+header ul li a {
+  position: relative;
+  text-decoration: none;
+  margin: 0px 15px;
+  color: var(--dark-grey);
+  font-weight: 400;
+}
+
+.impressum {
+  margin-top: 3vw;
+}
+
+section.hero#hero {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url(/uploads/beekeeper.jpg);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.start_hero {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero h1 {
+  color: var(--white);
+  font-size: 90px;
+  text-align: center;
+  line-height: 1em;
+}
+
+button {
+  display: flex;
+  color: var(--white);
+  background-color: var(--green);
+  border-radius: 25px;
+  padding: 1vw 3vw 1vw 3vw;
+  align-items: center;
+  font-size: 30px;
+  border-color: var(--white);
+  border: none;
+  justify-content: center;
+}
+
+button a {
+  color: var(--white);
+}
+
+button:hover {
+  background-color: var(--black);
+  border: none;
+  color: var(--white);
+}
+
+button a:hover {
+  color: var(--white);
+}
+
+section.Wir img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 30px;
+}
+
+section.Wir {
+  display: flex;
+  justify-content: center;
+  margin: 2vw;
+}
+
+div.person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section.Produkte {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0vw 20vw 0vw 20vw;
+}
+
+.Produkte .parent {
+  margin: 20px 20px 20px 20px;
+}
+
+.Produkte img {
+  max-width: 16vw;
+}
+
+.img_description {
+  color: #000;
+}
+
+.img_description p {
+  width: 12vw;
+}
+
+.Produkte_Button,
+.Kontakt_Button,
+.Button_verkaufspartner {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.Produkte_Button {
+  margin-top: 5vw;
+}
+
+.hero h1 {
+  margin-top: 20vw;
+}
+
 footer {
-  background-color: lightblue;
-  padding: 12px;
+  border-top: solid;
+  border-width: 0.5px;
+  border-color: var(--grey);
+  background-color: var(--white);
+  height: 20px;
+  margin-top: 8vw;
+}
+
+header {
+  border-bottom: solid;
+  border-width: 0.5px;
+  border-color: var(--grey);
+}
+
+.footer_nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+}
+
+.home,
+.Produkte,
+.Uber_Uns,
+.Kontakt {
+  color: var(--green);
 }

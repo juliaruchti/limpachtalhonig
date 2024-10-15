@@ -8,14 +8,48 @@
   </head>
 
   <body>
-    <header>
-      <a href="/">Home</a>
+    <!-- header-->
+    <header id="header" class="sticky">
+      <a href="/" class="logo">
+        <img
+          src="/uploads/LimpachtalHonig_Logo_Tannengrün.png"
+          alt="Limpachtal Honig"
+        />
+      </a>
+      <div class="nav">
+        <ul>
+          <li><a class="home" href="/" onclick="toggle()">Home</a></li>
+          <li><a href="/produkte" onclick="toggle()">Produkte</a></li>
+          <li><a href="/ueber_uns" onclick="toggle()">Über Uns</a></li>
+          <li>
+            <a href="/warenkorb" onclick="toggle()"><div
+                class="image-hover"
+              ></div></a>
+          </li>
+        </ul>
+      </div>
+      <div class="toggle" onclick="toggle()">
+        <i data-feather="menu"></i>
+      </div>
     </header>
 
     {{{body}}}
 
-    <footer>
-      <a href="/impressum">Impressum</a>
+    <footer id="footer">
+      <section class="footer_nav">
+        <section class="impressum">
+          <h6><a class="impressum" href="/impressum">Impressum</a></h6>
+        </section>
+
+        <section>
+          <h6>
+            <a
+              href="https://www.instagram.com/photographieoderso/"
+              target="_blank"
+            >© Julia Ruchti</a>
+          </h6>
+        </section>
+      </section>
     </footer>
   </body>
 
