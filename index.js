@@ -29,7 +29,7 @@ app.get("/warenkorb", async function (req, res) {
   res.render("warenkorb", {});
 });
 
-const handlebars = require("handlebars");
+import handlebars from "handlebars";
 handlebars.registerHelper("isActive", function (currentPage, page, options) {
   return currentPage === page ? options.fn(this) : options.inverse(this);
 });

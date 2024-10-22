@@ -20,7 +20,7 @@
       <div class="nav">
         <ul>
           {{#isActive currentPage "home"}}
-            <a href="/" class="active">Home</a>
+            <li><a href="/" class="active" onclick="toggle()">Home</a></li>
           {{else}}
             <li><a href="/" onclick="toggle()">Home</a></li>
           {{/isActive}}
