@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>HTML5 Boilerplate</title>
     <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/zat5bvn.css" />
   </head>
 
   <body>
@@ -18,7 +19,11 @@
       </a>
       <div class="nav">
         <ul>
-          <li><a class="home" href="/" onclick="toggle()">Home</a></li>
+          {{#isActive currentPage "home"}}
+            <a href="/" class="active">Home</a>
+          {{else}}
+            <li><a href="/" onclick="toggle()">Home</a></li>
+          {{/isActive}}
           <li><a href="/produkte" onclick="toggle()">Produkte</a></li>
           <li><a href="/ueber_uns" onclick="toggle()">Über Uns</a></li>
           <li>
@@ -37,18 +42,11 @@
 
     <footer id="footer">
       <section class="footer_nav">
-        <section class="impressum">
-          <h6><a class="impressum" href="/impressum">Impressum</a></h6>
-        </section>
-
-        <section>
-          <h6>
-            <a
-              href="https://www.instagram.com/photographieoderso/"
-              target="_blank"
-            >© Julia Ruchti</a>
-          </h6>
-        </section>
+        <a href="/impressum">Impressum</a>
+        <a
+          href="https://www.instagram.com/photographieoderso/"
+          target="_blank"
+        >© Julia Ruchti</a>
       </section>
     </footer>
   </body>
