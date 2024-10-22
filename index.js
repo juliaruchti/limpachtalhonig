@@ -1,13 +1,5 @@
 import { createApp } from "./config.js";
 
-const app = createApp({
-  user: "autumn_star_7622",
-  host: "168.119.168.41",
-  database: "demo",
-  password: "uaioysdfjoysfdf",
-  port: 18324,
-});
-
 /* Startseite */
 app.get("/", async function (req, res) {
   res.render("start", {});
