@@ -218,7 +218,7 @@ div.person {
   align-items: center;
 }
 
-section.Produkte {
+.Produkte {
   display: flex;
   flex-wrap: wrap;
   margin: 0vw 20vw 0vw 20vw;
@@ -230,6 +230,22 @@ section.Produkte {
 
 .Produkte img {
   max-width: 16vw;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+.cart-item {
+  margin-bottom: 100px;
+}
+
+#cart {
+  margin-top: 200px;
+}
+
+.cart-item-details {
+  padding-left: 30px;
 }
 
 .img_description {
@@ -267,4 +283,27 @@ footer {
 
 .active {
   color: var(--green);
+}
+
+/* Warenkorn Icon auf Bild*/
+
+.parent {
+  position: relative;
+  display: inline-block;
+}
+
+/* Warenkorb-Link oben rechts */
+.warenkorb-link {
+  position: absolute;
+  top: 10px; /* Abstand vom oberen Rand */
+  right: 10px; /* Abstand vom rechten Rand */
+  text-decoration: none;
+}
+
+.cart-item-remove {
+  text-decoration: underline;
+}
+.cart-item-remove:hover {
+  text-decoration: underline;
+  color: #006742;
 }

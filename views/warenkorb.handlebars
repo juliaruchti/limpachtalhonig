@@ -1,5 +1,60 @@
 <div class="box">
   <div class="intro">
-    <h1>Dein Warenkorb ist noch leer.</h1>
-  </div>
+ 
+  <h1>Dein Warenkorb</h1>
 </div>
+</div>
+  <div id="cart">
+      <!-- Hier wird der Inhalt des Warenkorbs angezeigt -->
+  <script>
+      // Warenkorb aus dem Local Storage abrufen
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      // Warenkorb-Div abrufen
+      const cartDiv = document.getElementById('cart');
+
+      // Überprüfen, ob der Warenkorb leer ist
+      if (cart.length === 0) {
+          cartDiv.innerHTML = '<h1>Dein Warenkorb ist noch leer.</h1>';
+      } else {
+          // Produkte im Warenkorb anzeigen
+          cart.forEach(product => {
+              cartDiv.innerHTML += `
+                  <div class="cart-item Produkte">
+                      <img src="${product.img}" alt="${product.name}">
+                      <div class="cart-item-details">
+                          <h3>${product.name}</h3>
+                          <p>Preis: CHF ${product.price.toFixed(2)}</p>
+                          <p>Menge: ${product.quantity}</p>
+                      </div>
+                      <div class="cart-item-remove" onclick="removeFromCart('${product.id}')">Entfernen</div>
+                  </div>
+              `;
+          });
+      }
+
+// Funktion zum Entfernen eines Produkts aus dem Warenkorb
+function removeFromCart(productId) {
+    // Finde das Produkt im Warenkorb
+    const product = cart.find(item => item.id === productId);
+    
+    if (product) {
+        // Wenn das Produkt gefunden wurde, verringere die Menge
+        if (product.quantity > 1) {
+            product.quantity -= 1; // Menge um 1 verringern
+        } else {
+            // Wenn die Menge 1 ist, entferne das Produkt aus dem Warenkorb
+            const updatedCart = cart.filter(item => item.id !== productId);
+            localStorage.setItem('cart', JSON.stringify(updatedCart));
+        }
+    }
+    
+    // Speichere den aktualisierten Warenkorb zurück in den Local Storage
+    localStorage.setItem('cart', JSON.stringify(cart));
+    
+    // Seite neu laden, um die Änderungen anzuzeigen
+    location.reload();
+      }
+  </script>
+</div>
+   </div>
