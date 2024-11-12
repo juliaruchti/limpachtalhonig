@@ -97,6 +97,11 @@ div.nav {
   width: 50%;
 }
 
+.verkaufspartner ul {
+  margin-top: 30px;
+  list-style-type: none;
+}
+
 .box {
   display: flex;
   justify-content: center;
