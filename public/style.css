@@ -249,7 +249,7 @@ h3 {
   margin-top: 200px;
 }
 
-.cart-item-details {
+.cart-item-container {
   padding-left: 30px;
 }
 
@@ -305,10 +305,19 @@ footer {
   text-decoration: none;
 }
 
+.cart-item-container {
+  flex-direction: column;
+}
+
 .cart-item-remove {
   text-decoration: underline;
+  margin-top: 30px;
 }
 .cart-item-remove:hover {
   text-decoration: underline;
   color: #006742;
+}
+
+.Produktname {
+  margin-bottom: 20px;
 }

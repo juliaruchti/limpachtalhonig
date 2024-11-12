@@ -1,18 +1,23 @@
 <div class="box">
-  <div class="intro">
- 
-  <h1>Dein Warenkorb</h1>
-</div>
-</div>
+    <div class="intro">
+      <h1>Dein Warenkorb</h1>
+    </div>
+  </div>
   <div id="cart">
       <!-- Hier wird der Inhalt des Warenkorbs angezeigt -->
+  
+
+    </div>
+  
+    <div id="total-price"></div>
+  
   <script>
       // Warenkorb aus dem Local Storage abrufen
       const cart = JSON.parse(localStorage.getItem('cart')) || [];
-
+  
       // Warenkorb-Div abrufen
       const cartDiv = document.getElementById('cart');
-
+  
       // Überprüfen, ob der Warenkorb leer ist
       if (cart.length === 0) {
           cartDiv.innerHTML = '<h1>Dein Warenkorb ist noch leer.</h1>';
@@ -22,57 +27,78 @@
               cartDiv.innerHTML += `
                   <div class="cart-item Produkte">
                       <img src="${product.img}" alt="${product.name}">
+                      <div class="cart-item-container">
                       <div class="cart-item-details">
-                          <h3>${product.name}</h3>
+                          <h3 class="Produktname">${product.name}</h3>
                           <p>Preis: CHF ${product.price.toFixed(2)}</p>
                           <p>Menge: ${product.quantity}</p>
                       </div>
                       <div class="cart-item-remove" onclick="removeFromCart('${product.id}')">Entfernen</div>
                   </div>
+              </div>
               `;
           });
+  
+          // Gesamtpreis berechnen und anzeigen
+          calculateTotalPrice();
+      }
+  
+      // Funktion zum Berechnen des Gesamtpreises
+      function calculateTotalPrice() {
+          let totalPrice = 0;
+          cart.forEach(product => {
+              totalPrice += product.price * product.quantity; // Preis x Menge
+          });
+  
+          // Gesamtpreis anzeigen
+          document.getElementById('total-price').textContent = `Gesamtpreis: CHF ${totalPrice.toFixed(2)}`;
+      }
+  
+      // Funktion zum Entfernen eines Produkts aus dem Warenkorb
+      function removeFromCart(productId) {
+          const product = cart.find(item => item.id === productId);
+          
+          if (product) {
+              if (product.quantity > 1) {
+                  // Menge um 1 verringern
+                  product.quantity -= 1; 
+              } else {
+                  // Produkt entfernen, wenn die Menge 1 ist
+                  const updatedCart = cart.filter(item => item.id !== productId);
+                  localStorage.setItem('cart', JSON.stringify(updatedCart));
+                  location.reload();
+                  return;
+              }
+          }
+  
+          // Warenkorb speichern und Seite neu laden
+          localStorage.setItem('cart', JSON.stringify(cart));
+          location.reload();
       }
 
 
-       // Funktion zum Berechnen des Gesamtpreises
-       function calculateTotalPrice() {
-            let totalPrice = 0;
-            cart.forEach(product => {
-                totalPrice += product.price * product.quantity; // Preis x Menge
-            });
-
-            // Gesamtpreis anzeigen
-            document.getElementById('total-price').textContent = `Gesamtpreis: CHF ${totalPrice.toFixed(2)}`;
-        }
-
-
-// Funktion zum Entfernen eines Produkts aus dem Warenkorb
-function removeFromCart(productId) {
-    // Finde das Produkt im Warenkorb
-    const product = cart.find(item => item.id === productId);
-    
-    if (product) {
-        if (product.quantity > 1) {
-            // Menge um 1 verringern
-            product.quantity -= 1; 
-        } else {
-            // Wenn die Menge 1 ist, Produkt aus dem Array entfernen
-            const updatedCart = cart.filter(item => item.id !== productId);
-            // Speichere das aktualisierte Array in den Local Storage
-            localStorage.setItem('cart', JSON.stringify(updatedCart));
-            location.reload(); // Seite neu laden, um die Änderungen anzuzeigen
-            return; // Funktion beenden, damit der nächste Speicherbefehl nicht ausgeführt wird
-        }
-    }
-    
-    // Für den Fall, dass die Menge nur reduziert wurde, den aktuellen `cart`-Array speichern
-    localStorage.setItem('cart', JSON.stringify(cart));
-    
-    // Seite neu laden, um die Änderungen anzuzeigen
-    location.reload();
-}
+      
   </script>
+  
          
 </div>
-<div id="total-price"></div>
+
+
+<div class="box">
+    <form action="mailto:julia29ruchti@gmail.com" method="post">
+        <p>Vorname</p>
+        <input type="text">
+    <p>Nachname</p>
+        <input type="text">
+    <p>E-Mail</p>
+        <input type="email">
+    <p>Text auf Geschenkbox</p>
+        <input type="text">
+
+                <!-- Verstecktes Feld zum Speichern des Warenkorbs -->
+                <input type="hidden" id="cartData" name="cartData">
+        <button type="submit">Absenden</button>
+    </form>
+</div>
    </div>
+</div>
