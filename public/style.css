@@ -113,6 +113,7 @@ div.nav {
 }
 
 #box {
+  padding: 0 15vw;
   flex-direction: column;
 }
 
@@ -255,7 +256,7 @@ h3 {
 }
 
 #cart {
-  margin-top: 200px;
+  margin-top: 50px;
 }
 
 .cart-item-container {
@@ -329,4 +330,26 @@ footer {
 
 .Produktname {
   margin-bottom: 20px;
+}
+
+input {
+  height: 35px;
+  width: 20vw;
+  border-radius: 0;
+  border-width: 1px;
+  padding: 4px;
+  margin: 10px 0 30px 0;
+}
+
+.textgeschenk {
+  min-width: 30vw;
+  height: 40px;
+  border-radius: 0;
+  border-width: 1px;
+  padding: 4px;
+  margin: 10px 0 30px 0;
+}
+
+.formp {
+  font-weight: bold;
 }

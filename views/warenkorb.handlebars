@@ -1,6 +1,6 @@
 <div class="box">
     <div class="intro">
-      <h1>Dein Warenkorb</h1>
+      <h2>Dein Warenkorb</h2>
     </div>
   </div>
   <div id="cart">
@@ -12,18 +12,18 @@
     <div class="box" id="box">
         <h2>Bevor du deine Bestellung abschliesst, brauchen wir noch ein paar Informationen.</h2>
         <form action="mailto:julia29ruchti@gmail.com" method="post">
-            <p>Vorname</p>
-            <input type="text">
-        <p>Nachname</p>
-            <input type="text">
-        <p>E-Mail</p>
-            <input type="email">
-        <p>Text auf Geschenkbox</p>
-            <input type="text">
+            <p class="formp">Vorname</p>
+            <input type="text" placeholder="Max">
+        <p class="formp">Nachname</p>
+            <input type="text" placeholder="Mustermann">
+        <p class="formp">E-Mail</p>
+            <input type="email" placeholder="maxmustermann@muster.ch">
+        <p class="formp">Text auf Geschenkbox</p>
+            <textarea class="textgeschenk" type="text" placeholder="Geschenkset Frühlingshonig und Sommerhonig je 250gGeschenkset Frühlingshonig und Sommerhonig je 250g -- Text: Alles gute zum Geburtstag"></textarea>
 
 
             <div id="total-price" class="h2"></div>
-            <p class="endpreis">Du kannst deine Bestellung schon am nächsten Tag an unserer Verkaufstätte in <a href="https://maps.app.goo.gl/nJ2Sodz5AuPz3Aeb6">Hauptstrasse 9, 3317 Mülchi,</a> abholen. Die Bezahlung erfolgt mit Bargeld oder über Twint.</p>
+            <p class="endpreis">Du kannst deine Bestellung schon am nächsten Tag an unserer Verkaufstätte in <a class="link" href="https://maps.app.goo.gl/nJ2Sodz5AuPz3Aeb6">Hauptstrasse 9, 3317 Mülchi,</a> abholen. Die Bezahlung erfolgt mit Bargeld oder über Twint.</p>
     
                     <!-- Verstecktes Feld zum Speichern des Warenkorbs -->
                     <input type="hidden" id="cartData" name="cartData">
