@@ -9,7 +9,8 @@
 
     </div>
   
-    <div class="box">
+    <div class="box" id="box">
+        <h2>Bevor du deine Bestellung abschliesst, brauchen wir noch ein paar Informationen.</h2>
         <form action="mailto:julia29ruchti@gmail.com" method="post">
             <p>Vorname</p>
             <input type="text">
@@ -21,12 +22,13 @@
             <input type="text">
 
 
-            <div id="total-price"></div>
-            <p>Du kannst deine Bestellung schon am nächsten Tag an unserer Verkaufstätte in Hauptstrasse 9, 3317 Mülchi, abholen. Die Bezahlung erfolgt mit Bargeld oder über Twint.</p>
+            <div id="total-price" class="h2"></div>
+            <p class="endpreis">Du kannst deine Bestellung schon am nächsten Tag an unserer Verkaufstätte in <a href="https://maps.app.goo.gl/nJ2Sodz5AuPz3Aeb6">Hauptstrasse 9, 3317 Mülchi,</a> abholen. Die Bezahlung erfolgt mit Bargeld oder über Twint.</p>
     
                     <!-- Verstecktes Feld zum Speichern des Warenkorbs -->
                     <input type="hidden" id="cartData" name="cartData">
-            <button type="submit">Bestellung aufgeben</button>
+                    <div class="box">
+            <button type="submit" class="bestellung">Bestellung aufgeben</button></div>
         </form>
     </div>
 
@@ -72,7 +74,7 @@
           });
   
           // Gesamtpreis anzeigen
-          document.getElementById('total-price').textContent = `<h2>Gesamtpreis: CHF ${totalPrice.toFixed(2)}</h2>`;
+          document.getElementById('total-price').textContent = `Gesamtpreis: CHF ${totalPrice.toFixed(2)}`;
       }
   
       // Funktion zum Entfernen eines Produkts aus dem Warenkorb
