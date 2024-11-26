@@ -9,7 +9,28 @@
 
     </div>
   
-    <div id="total-price"></div>
+    <div class="box">
+        <form action="mailto:julia29ruchti@gmail.com" method="post">
+            <p>Vorname</p>
+            <input type="text">
+        <p>Nachname</p>
+            <input type="text">
+        <p>E-Mail</p>
+            <input type="email">
+        <p>Text auf Geschenkbox</p>
+            <input type="text">
+
+
+            <div id="total-price"></div>
+            <p>Du kannst deine Bestellung schon am nächsten Tag an unserer Verkaufstätte in Hauptstrasse 9, 3317 Mülchi, abholen. Die Bezahlung erfolgt mit Bargeld oder über Twint.</p>
+    
+                    <!-- Verstecktes Feld zum Speichern des Warenkorbs -->
+                    <input type="hidden" id="cartData" name="cartData">
+            <button type="submit">Bestellung aufgeben</button>
+        </form>
+    </div>
+
+    
   
   <script>
       // Warenkorb aus dem Local Storage abrufen
@@ -51,7 +72,7 @@
           });
   
           // Gesamtpreis anzeigen
-          document.getElementById('total-price').textContent = `Gesamtpreis: CHF ${totalPrice.toFixed(2)}`;
+          document.getElementById('total-price').textContent = `<h2>Gesamtpreis: CHF ${totalPrice.toFixed(2)}</h2>`;
       }
   
       // Funktion zum Entfernen eines Produkts aus dem Warenkorb
@@ -84,21 +105,6 @@
 </div>
 
 
-<div class="box">
-    <form action="mailto:julia29ruchti@gmail.com" method="post">
-        <p>Vorname</p>
-        <input type="text">
-    <p>Nachname</p>
-        <input type="text">
-    <p>E-Mail</p>
-        <input type="email">
-    <p>Text auf Geschenkbox</p>
-        <input type="text">
 
-                <!-- Verstecktes Feld zum Speichern des Warenkorbs -->
-                <input type="hidden" id="cartData" name="cartData">
-        <button type="submit">Absenden</button>
-    </form>
-</div>
    </div>
 </div>
