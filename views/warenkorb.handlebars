@@ -1,6 +1,6 @@
 <div class="box">
     <div class="intro">
-      <h2>Dein Warenkorb</h2>
+      
     </div>
   </div>
   <div id="cart">
@@ -9,17 +9,22 @@
 
     </div>
   
+
     <div class="box" id="box">
         <h2>Bevor du deine Bestellung abschliesst, brauchen wir noch ein paar Informationen.</h2>
         <form action="mailto:julia29ruchti@gmail.com" method="post">
-            <p class="formp">Vorname</p>
+            <p class="form">Vorname*</p>
             <input type="text" placeholder="Max">
-        <p class="formp">Nachname</p>
+        <p class="form">Nachname*</p>
             <input type="text" placeholder="Mustermann">
-        <p class="formp">E-Mail</p>
-            <input type="email" placeholder="maxmustermann@muster.ch">
-        <p class="formp">Text auf Geschenkbox</p>
-            <textarea class="textgeschenk" type="text" placeholder="Geschenkset Frühlingshonig und Sommerhonig je 250gGeschenkset Frühlingshonig und Sommerhonig je 250g -- Text: Alles gute zum Geburtstag"></textarea>
+        <p class="form">E-Mail*</p>
+            <input type="email" placeholder="max@muster.ch">
+        <p class="form">Text auf Geschenkset(s) (falls in Bestellung vorhanden)</p>
+            <textarea class="textgeschenk" type="text" placeholder="Personalisierter Text für Geschenksets. Wenn kein Aufdruck gewünscht ist, dann leer lassen."></textarea>
+
+
+            
+
 
 
             <div id="total-price" class="h2"></div>
@@ -43,11 +48,12 @@
   
       // Überprüfen, ob der Warenkorb leer ist
       if (cart.length === 0) {
-          cartDiv.innerHTML = '<h1>Dein Warenkorb ist noch leer.</h1>';
+          cartDiv.innerHTML = '<h1 class="box">Dein Warenkorb ist noch leer.</h1>';
       } else {
           // Produkte im Warenkorb anzeigen
           cart.forEach(product => {
               cartDiv.innerHTML += `
+              <h2 class="box">Dein Warenkorb</h2>
                   <div class="cart-item Produkte">
                       <img src="${product.img}" alt="${product.name}">
                       <div class="cart-item-container">
@@ -70,7 +76,7 @@
       function calculateTotalPrice() {
           let totalPrice = 0;
           cart.forEach(product => {
-              totalPrice += product.price * product.quantity; // Preis x Menge
+              totalPrice += product.price * product.quantity;
           });
   
           // Gesamtpreis anzeigen
